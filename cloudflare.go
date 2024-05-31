@@ -35,7 +35,7 @@ func (Provider) CaddyModule() caddy.ModuleInfo {
 	}
 }
 
-// Before using the provider config, resolve placeholders in the API token.
+// Provision Before using the provider config, resolve placeholders in the API token.
 // Implements caddy.Provisioner.
 func (p *Provider) Provision(ctx caddy.Context) error {
 	p.Provider.APIToken = caddy.NewReplacer().ReplaceAll(p.Provider.APIToken, "")
